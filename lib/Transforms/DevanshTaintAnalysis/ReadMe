@@ -1,0 +1,5 @@
+Commands:
+./clang -S -emit-llvm <file_name>.c -o <file_name>.ll
+./opt -load ../lib/LLVMDevanshTaintAnalysis.so -DevanshTaintAnalysis <file_name>.ll -o <file_name>Fenced.bc
+./llvm-dis <file_name>Fenced.bc
+./llc <file_name>Fenced.ll -march=x86-64 -o <file_name>Fenced.s
